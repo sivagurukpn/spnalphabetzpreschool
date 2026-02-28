@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" fill="none">
+  <rect width="1280" height="720" fill="#e0f2fe"/>
+  <path d="M140 130h1000v460H140z" fill="#ffffff" fill-opacity=".85"/>
+  <path d="M180 180h920v360H180z" fill="#bfdbfe"/>
+  <path d="M180 180 560 350 1100 180" stroke="#93c5fd" stroke-width="12" fill="none"/>
+  <path d="M180 540 520 350 900 520 1100 390" stroke="#60a5fa" stroke-width="12" fill="none"/>
+  <circle cx="660" cy="340" r="46" fill="#1d4ed8"/>
+  <path d="M660 300c-22 0-40 17-40 39 0 31 40 71 40 71s40-40 40-71c0-22-18-39-40-39Zm0 53a14 14 0 1 1 0-28 14 14 0 0 1 0 28Z" fill="#fff"/>
+  <text x="640" y="650" text-anchor="middle" font-size="32" fill="#1e3a8a" font-family="Segoe UI, Arial">Campus Location Map Placeholder</text>
+</svg>
