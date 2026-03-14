@@ -150,48 +150,86 @@
           <div class="card" style="background: rgba(255,255,255,.90); box-shadow: var(--shadow)">
             <div class="pad">
               <h3 style="margin-top:0">Admission Inquiry</h3>
-              <p class="small" style="margin-top:6px">Front-end only. Connect to your backend API when ready.</p>
+              <!-- <p class="small" style="margin-top:6px">Front-end only. Connect to your backend API when ready.</p> -->
 
-              <form class="form" data-admissions-form>
-                <div class="form-grid">
-                  <div class="field">
-                    <label class="label" for="parent">Parent/Guardian Name *</label>
-                    <input class="input" id="parent" name="name" placeholder="Your Name" required />
-                  </div>
+              <form id="admissionForm"
+      class="form"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSfkAOu1i9CVplDtvCCoIF1uR47Yv8IDHgJOMNfjN4-n7kwBTg/formResponse"
+      method="POST"
+      target="hidden_iframe">
 
-                  <div class="field">
-                    <label class="label" for="student">Student Name *</label>
-                    <input class="input" id="student" name="student" placeholder="Student's Name" required />
-                  </div>
+<div class="form-grid">
 
-                  <div class="field">
-                    <label class="label" for="email">Email Address *</label>
-                    <input class="input" id="email" name="email" type="email" placeholder="your@email.com" required />
-                  </div>
+<div class="field">
+<label class="label" for="parent">Parent/Guardian Name *</label>
+<input class="input"
+       id="parent"
+       name="entry.757683861"
+       placeholder="Your Name"
+       required />
+</div>
 
-                  <div class="field">
-                    <label class="label" for="phone">Phone Number *</label>
-                    <input class="input" id="phone" name="phone" placeholder="+91 98765 43210" required />
-                  </div>
+<div class="field">
+<label class="label" for="student">Student Name *</label>
+<input class="input"
+       id="student"
+       name="entry.665997656"
+       placeholder="Student's Name"
+       required />
+</div>
 
-                  <div class="field">
-                    <label class="label" for="grade">Student Age/Grade</label>
-                    <input class="input" id="grade" name="grade" placeholder="e.g., 6 years / Grade 1" />
-                  </div>
+<div class="field">
+<label class="label" for="email">Email Address *</label>
+<input class="input"
+       id="email"
+       name="entry.533755646"
+       type="email"
+       placeholder="your@email.com"
+       required />
+</div>
 
-                  <div class="field">
-                    <label class="label" for="date">Preferred Start Date</label>
-                    <input class="input" id="date" name="date" placeholder="dd/mm/yyyy" />
-                  </div>
+<div class="field">
+<label class="label" for="phone">Phone Number *</label>
+<input class="input"
+       id="phone"
+       name="entry.1771265543"
+       placeholder="+91 98765 43210"
+       required />
+</div>
 
-                  <div class="field span-2">
-                    <label class="label" for="note">Message / Questions</label>
-                    <textarea class="textarea" id="note" name="note" placeholder="Tell us about your inquiry and any questions you have..." ></textarea>
-                  </div>
-                </div>
+<div class="field">
+<label class="label" for="grade">Student Age/Grade</label>
+<input class="input"
+       id="grade"
+       name="entry.1127887880"
+       placeholder="e.g., 6 years / Grade 1" />
+</div>
 
-                <button class="btn gradient full" type="submit">Submit Inquiry</button>
-              </form>
+<div class="field">
+<label class="label" for="date">Preferred Start Date</label>
+<input class="input"
+       id="date"
+       name="entry.1682631707"
+       placeholder="dd/mm/yyyy" />
+</div>
+
+<div class="field span-2">
+<label class="label" for="note">Message / Questions</label>
+<textarea class="textarea"
+          id="note"
+          name="entry.1707808297"
+          placeholder="Tell us about your inquiry and any questions you have..."></textarea>
+</div>
+
+</div>
+
+<button class="btn gradient full" type="submit">
+Submit Inquiry
+</button>
+
+</form>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
             </div>
           </div>
         </div>
