@@ -152,80 +152,51 @@
               <h3 style="margin-top:0">Admission Inquiry</h3>
               <!-- <p class="small" style="margin-top:6px">Front-end only. Connect to your backend API when ready.</p> -->
 
-              <form id="admissionForm"
-      class="form"
-      action="https://docs.google.com/forms/d/e/1FAIpQLSfkAOu1i9CVplDtvCCoIF1uR47Yv8IDHgJOMNfjN4-n7kwBTg/formResponse"
-      method="POST"
-      target="hidden_iframe">
+      <form id="admissionForm"
+action="https://docs.google.com/forms/d/e/1FAIpQLSfkAOu1i9CVplDtvCCoIF1uR47Yv8IDHgJOMNfjN4-n7kwBTg/formResponse"
+method="POST"
+target="hidden_iframe">
 
 <div class="form-grid">
 
 <div class="field">
-<label class="label" for="parent">Parent/Guardian Name *</label>
-<input class="input"
-       id="parent"
-       name="entry.757683861"
-       placeholder="Your Name"
-       required />
+<label for="parent">Parent/Guardian Name *</label>
+<input id="parent" name="entry.757683861" required>
 </div>
 
 <div class="field">
-<label class="label" for="student">Student Name *</label>
-<input class="input"
-       id="student"
-       name="entry.665997656"
-       placeholder="Student's Name"
-       required />
+<label for="student">Student Name *</label>
+<input id="student" name="entry.665997656" required>
 </div>
 
 <div class="field">
-<label class="label" for="email">Email Address *</label>
-<input class="input"
-       id="email"
-       name="entry.533755646"
-       type="email"
-       placeholder="your@email.com"
-       required />
+<label for="email">Email *</label>
+<input id="email" type="email" name="entry.533755646" required>
 </div>
 
 <div class="field">
-<label class="label" for="phone">Phone Number *</label>
-<input class="input"
-       id="phone"
-       name="entry.1771265543"
-       placeholder="+91 98765 43210"
-       required />
+<label for="phone">Phone *</label>
+<input id="phone" name="entry.1771265543" required>
 </div>
 
 <div class="field">
-<label class="label" for="grade">Student Age/Grade</label>
-<input class="input"
-       id="grade"
-       name="entry.1127887880"
-       placeholder="e.g., 6 years / Grade 1" />
+<label for="grade">Student Age/Grade</label>
+<input id="grade" name="entry.1127887880">
 </div>
 
 <div class="field">
-<label class="label" for="date">Preferred Start Date</label>
-<input class="input"
-       id="date"
-       name="entry.1682631707"
-       placeholder="dd/mm/yyyy" />
+<label for="date">Preferred Start Date</label>
+<input id="date" type="date" name="entry.1682631707">
 </div>
 
-<div class="field span-2">
-<label class="label" for="note">Message / Questions</label>
-<textarea class="textarea"
-          id="note"
-          name="entry.1707808297"
-          placeholder="Tell us about your inquiry and any questions you have..."></textarea>
+<div class="field">
+<label for="note">Message</label>
+<textarea id="note" name="entry.1707808297"></textarea>
 </div>
 
 </div>
 
-<button class="btn gradient full" type="submit">
-Submit Inquiry
-</button>
+<button type="submit">Submit Inquiry</button>
 
 </form>
 
@@ -285,6 +256,14 @@ Submit Inquiry
   </div>
 
   <script src="assets/js/main.js" defer></script>
+  <script>
+document.getElementById("admissionForm").addEventListener("submit", function() {
+    setTimeout(function(){
+        alert("Thank you! Your enquiry has been submitted.");
+        document.getElementById("admissionForm").reset();
+    },1000);
+});
+</script>
 </body>
 </html>
 
