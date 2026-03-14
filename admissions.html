@@ -152,51 +152,50 @@
               <h3 style="margin-top:0">Admission Inquiry</h3>
               <!-- <p class="small" style="margin-top:6px">Front-end only. Connect to your backend API when ready.</p> -->
 
-      <form id="admissionForm"
-action="https://docs.google.com/forms/d/e/1FAIpQLSfkAOu1i9CVplDtvCCoIF1uR47Yv8IDHgJOMNfjN4-n7kwBTg/formResponse"
-method="POST"
-target="hidden_iframe">
+   <form id="admissionForm" class="form" data-admissions-form>
 
 <div class="form-grid">
 
 <div class="field">
-<label for="parent">Parent/Guardian Name *</label>
-<input id="parent" name="entry.757683861" required>
+<label class="label" for="parent">Parent/Guardian Name *</label>
+<input class="input" id="parent" name="name" required />
 </div>
 
 <div class="field">
-<label for="student">Student Name *</label>
-<input id="student" name="entry.665997656" required>
+<label class="label" for="student">Student Name *</label>
+<input class="input" id="student" name="student" required />
 </div>
 
 <div class="field">
-<label for="email">Email *</label>
-<input id="email" type="email" name="entry.533755646" required>
+<label class="label" for="email">Email *</label>
+<input class="input" id="email" name="email" type="email" required />
 </div>
 
 <div class="field">
-<label for="phone">Phone *</label>
-<input id="phone" name="entry.1771265543" required>
+<label class="label" for="phone">Phone *</label>
+<input class="input" id="phone" name="phone" required />
 </div>
 
 <div class="field">
-<label for="grade">Student Age/Grade</label>
-<input id="grade" name="entry.1127887880">
+<label class="label" for="grade">Student Age</label>
+<input class="input" id="grade" name="grade" />
 </div>
 
 <div class="field">
-<label for="program">Programs</label>
-<input id="program" name="entry.1682631707">
+<label class="label" for="program">Program</label>
+<input class="input" id="program" name="program" />
 </div>
 
-<div class="field">
-<label for="note">Message / Questions</label>
-<textarea id="note" name="entry.1707808297"></textarea>
+<div class="field span-2">
+<label class="label" for="note">Message/Questions</label>
+<textarea class="textarea" id="note" name="note"></textarea>
 </div>
 
 </div>
 
-<button type="submit">Submit</button>
+<button class="btn gradient full" type="submit">
+Submit
+</button>
 
 </form>
 
@@ -257,11 +256,30 @@ target="hidden_iframe">
 
   <script src="assets/js/main.js" defer></script>
   <script>
-document.getElementById("admissionForm").addEventListener("submit", function() {
-    setTimeout(function(){
-        alert("Thank you! Your enquiry has been submitted.");
-        document.getElementById("admissionForm").reset();
-    },1000);
+document.getElementById("admissionForm").addEventListener("submit", function(e) {
+
+e.preventDefault();
+
+const formData = new FormData();
+
+formData.append("entry.757683861", document.getElementById("parent").value);
+formData.append("entry.665997656", document.getElementById("student").value);
+formData.append("entry.533755646", document.getElementById("email").value);
+formData.append("entry.1771265543", document.getElementById("phone").value);
+formData.append("entry.1127887880", document.getElementById("grade").value);
+formData.append("entry.1682631707", document.getElementById("program").value);
+formData.append("entry.1707808297", document.getElementById("note").value);
+
+fetch("https://docs.google.com/forms/d/e/1FAIpQLSfkAOu1i9CVplDtvCCoIF1uR47Yv8IDHgJOMNfjN4-n7kwBTg/formResponse", {
+method: "POST",
+mode: "no-cors",
+body: formData
+});
+
+alert("Thank you! Your enquiry has been submitted.");
+
+document.getElementById("admissionForm").reset();
+
 });
 </script>
 </body>
